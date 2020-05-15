@@ -40,7 +40,7 @@ let _ = {
   has(obj, objKey){
     return obj[objKey]? true: false;
   },
-  specify(){
+  specify(test){
     
   },
 };
