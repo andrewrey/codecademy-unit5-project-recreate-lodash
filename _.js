@@ -61,7 +61,30 @@ let _ = {
     let newArr = arr.slice(num);
     return newArr;
   },
+  dropWhile(arr, func){
+    let foundIndex = arr.findIndex((item, index)=>{
+      let value = !func(item, index, arr);
+      console.log(value);
+      return value;
+    });
+    console.log(foundIndex);
+    let droppedArray = this.drop(arr, foundIndex);
+    return droppedArray;
+  },
+  chunk(arr, num=1){
+    let newArray = [];
+    for (let i = 0; i < arr.length; i += num ){
+      let arrayChunk = arr.slice(i, i+num);
+      newArray.push(arrayChunk);
+    }
+    return newArray;
+  },
 };
+
+
+
+
+
 
 // Do not write or modify code below this line.
 module.exports = _;
