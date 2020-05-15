@@ -47,6 +47,16 @@ let _ = {
     }
     return invObject;
   },
+  findKey(obj, func){
+    for (let item in obj){
+      let currentItem = obj[item];
+      let predicateReturn = func(currentItem);
+      if(predicateReturn === true){
+        return item;
+      }
+    }
+    return undefined;
+  },
 };
 
 
