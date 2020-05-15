@@ -21,10 +21,29 @@ let _ = {
     return array;
     
   },
+  pad(word, num){
+    if(word.length > num ){
+      return word;
+    } else {
+      let space = ' ';
+      let wordLen = word.length;
+      let difference = num - wordLen;
+      if (difference % 2 === 0 ){
+        let numOfSpace = difference / 2;
+        return `${space.repeat(numOfSpace)}${word}${space.repeat(numOfSpace)}`
+      } else {
+        let numOfSpace = Math.floor( difference / 2);
+        return `${space.repeat(numOfSpace)}${word}${space.repeat(numOfSpace + 1)}`
+      }
+    }
+  },
+  has(obj, objKey){
+    return obj[objKey]? true: false;
+  },
+  specify(){
+    
+  },
 };
-
-
-console.log(_.words('Hello how are you'));
 
 
 
