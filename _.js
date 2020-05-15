@@ -40,12 +40,14 @@ let _ = {
   has(obj, objKey){
     return obj[objKey]? true: false;
   },
-  specify(test){
-    
+  invert(object){
+    let invObject = {};
+    for (let pKey in object){
+     invObject[object[pKey]] = pKey;
+    }
+    return invObject;
   },
 };
-
-
 
 
 // Do not write or modify code below this line.
