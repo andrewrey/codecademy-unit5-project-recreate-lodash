@@ -57,8 +57,11 @@ let _ = {
     }
     return undefined;
   },
+  drop(arr, num=1){
+    let newArr = arr.slice(num);
+    return newArr;
+  },
 };
-
 
 // Do not write or modify code below this line.
 module.exports = _;
